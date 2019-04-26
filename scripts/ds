@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# ds - Disown Silently
+# Disowns a process from the terminal and pipes output to dev/null 
+# found via this blog http://felixmilea.com/2014/12/running-bash-commands-background-properly/
+
+if test -t 1; then
+    exec 1>/dev/null
+fi
+
+if test -t 2; then
+    exec 2>/dev/null
+fi
+
+"$@" &
