@@ -1,0 +1,4 @@
+tree
+git
+emacs
+auctex
